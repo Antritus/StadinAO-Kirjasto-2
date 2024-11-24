@@ -1,0 +1,120 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+:root {
+    color-scheme: light dark;
+    --dark-mode-login-bg-color: #373434;
+    --light-mode-login-bg-color: #f3e5e5;
+
+    --dark-mode-background-color: #353232;
+    --light-mode-background-color: white;
+
+    --standard-focus-color: #7400c2;
+    --standard-btn-color: #7953cd;
+
+}
+body {
+    background: light-dark(var(--light-mode-background-color), var(--dark-mode-background-color));
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
+}
+
+body.dark-mode {
+    background-color: #353232;
+    color: white;
+}
+
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+input[type="checkbox"],
+  input[type="radio"],
+  input[type="number"],
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
+}
+#login-prompt {
+    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
+}
+
+*:focus {
+    outline: 2px solid #7400c2;
+}
+
+.dark-mode {
+    color-scheme: dark;
+    color: #e2e2e2;
+
+}
+.light-mode {
+    color-scheme: white;
+    color: black;
+}
+
+.danger{
+    color: #890000;
+}
+.error {
+    color: #d41212;
+}
+.warning {
+    color: #f9ff43;
+}
+.success {
+    color: #49ff00;
+}
+
+.danger-background{
+    background: #890000;
+}
+.error-background {
+    background: #d41212;
+}
+.warning-background {
+    background: #f9ff43;
+}
+.success-background {
+    background: #49ff00;
+}
+
+
+flink {
+    color: light-dark(#3b2890, #573dc5);
+    text-decoration: none;
+}
+flink:hover {
+    cursor: pointer;
+}
+flink-d {
+    color: light-dark(#3b2890, #573dc5) !important;
+    text-decoration: none !important;
+}
+flink-d:hover {
+    cursor: pointer !important;
+}
+a {
+    color: light-dark(#3b2890, #573dc5);
+    text-decoration: none;
+}
