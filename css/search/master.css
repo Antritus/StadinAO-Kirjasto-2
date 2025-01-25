@@ -1,0 +1,10 @@
+window-max-width.main {
+    max-width: 1800px;
+}
+.book-search-alignment {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

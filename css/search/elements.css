@@ -1,0 +1,142 @@
+:root {
+    --light-mode-product-element: #9a9a9a;
+    --dark-mode-product-element: #585858;
+}
+
+#elements-container {
+    max-width: 1800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    text-align: left;
+}
+
+.element-container {
+    margin: 8px;
+    padding: 10px;
+    border-radius: 10px;
+    flex: 0 0 15.66%;
+    box-sizing: border-box;
+    background-color: light-dark(var(--light-mode-product-element), var(--dark-mode-product-element));
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
+}
+
+.element-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.element-info-container p.element-title {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 5px;
+    text-wrap: auto;
+}
+
+.element-info-container p.element-description {
+    font-size: 15px;
+    text-wrap: auto;
+}
+
+.element-info-container p {
+    margin: 0;
+}
+
+.element-tags {
+    flex-grow: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.element-tags li.age-rating-S a {
+    color: light-dark(#92D050, #92D050);
+}
+
+.element-tags li.age-rating-s a {
+    color: light-dark(#92D050, #92D050);
+}
+
+.element-tags li.age-rating-7 a {
+    color: light-dark(#FDFD00, #FDFD00);
+}
+
+.element-tags li.age-rating-12 a {
+    color: light-dark(#FEBD00, #FEBD00);
+}
+
+.element-tags li.age-rating-16 a {
+    color: light-dark(#FFC000, #FFC000);
+}
+
+.element-tags li.age-rating-18 a {
+    color: light-dark(#FF0000, #FF0000);
+}
+
+.element-tags li.age-rating-S, .element-tags li.age-rating-s,
+.element-tags li.age-rating-7, .element-tags li.age-rating-12,
+.element-tags li.age-rating-7, .element-tags li.age-rating-18 {
+    background-color: light-dark(#373737, #373737);
+}
+
+.element-tags li a {
+    color: light-dark(#000, #fff);
+}
+.element-tags li:last-child {
+    margin-right: 0;
+}
+
+.element-tags li {
+    margin: 1px;
+    background-color: light-dark(#eee, #333);
+    font-weight: bold;
+    padding: 6px 8px;
+    border-radius: 100px 100px 100px 100px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1400px) {
+    .element-container {
+        margin: 6px;
+        padding: 12px;
+        flex: 0 0 19%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .element-container {
+        margin: 6px;
+        padding: 12px;
+        flex: 0 0 20.5%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .element-container {
+        margin: 6px;
+        padding: 12px;
+        flex: 0 0 23%;
+    }
+}
+
+@media (max-width: 799px) {
+    .element-container {
+        margin: 6px;
+        padding: 12px;
+        flex: 0 0 28%;
+    }
+}
+
+@media (max-width: 600px) {
+    .element-container {
+        margin: 6px;
+        padding: 12px;
+        flex: 0 0 40%;
+    }
+}

@@ -4,25 +4,34 @@
     box-sizing: border-box;
 }
 
-
 :root {
     color-scheme: light dark;
-    --dark-mode-login-bg-color: #373434;
-    --light-mode-login-bg-color: #f3e5e5;
+    --dark-mode-navigation-color: #222;
+    --dark-mode-background-color: #353535;
 
-    --dark-mode-background-color: #353232;
+    --light-mode-navigation-color: #e9e9e9;
     --light-mode-background-color: white;
 
-    --standard-focus-color: #7400c2;
-    --standard-btn-color: #7953cd;
+    --dark-mode-login-bg-color: #373434;
+    --light-mode-login-bg-color: #efefef;
 
+    --light-mode-standard-focus-color: #b156fa;
+    --dark-mode-standard-focus-color: #7400c2;
+
+    --light-mode-standard-btn-color: #c78df5;
+    --dark-mode-standard-btn-color: #960ffa;
+
+    --light-mode-link: #7051f5;
+    --dark-mode-link: #553acc;
 }
+
 body {
     background: light-dark(var(--light-mode-background-color), var(--dark-mode-background-color));
     font-family: "Inter", serif;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    font-kerning: none;
     transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
     padding: 0;
     margin: 0;
@@ -36,6 +45,25 @@ html {
 * {
     transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
 }
+.dark-mode {
+    color-scheme: dark;
+    color: #e2e2e2;
+
+}
+.light-mode {
+    color-scheme: white;
+    color: black;
+}
+
+input[type=text], input[type=password], input[type=email] {
+    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
+}
+
+window-max-width {
+    max-width: 1800px;
+    width: 100%;
+    margin: 0 auto;
+}
 
 body.dark-mode {
     background-color: #353232;
@@ -47,30 +75,20 @@ body.light-mode {
     color: black;
 }
 
-input[type="checkbox"],
-  input[type="radio"],
-  input[type="number"],
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
-}
 #login-prompt {
     transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
 }
 
 *:focus {
-    outline: 2px solid #7400c2;
+    outline: 2px solid light-dark(var(--light-mode-standard-focus-color), var(--dark-mode-standard-focus-color));
 }
 
-.dark-mode {
-    color-scheme: dark;
-    color: #e2e2e2;
-
+.custom-focus {
+    outline: 2px solid light-dark(var(--light-mode-standard-focus-color), var(--dark-mode-standard-focus-color));
 }
-.light-mode {
-    color-scheme: white;
-    color: black;
+
+.no-outline:focus {
+    outline: none;
 }
 
 .danger{
@@ -101,20 +119,23 @@ input[type="checkbox"],
 
 
 flink {
-    color: light-dark(#3b2890, #573dc5);
+    color: light-dark(var(--light-mode-link), var(--dark-mode-link));
     text-decoration: none;
 }
 flink:hover {
     cursor: pointer;
 }
 flink-d {
-    color: light-dark(#3b2890, #573dc5) !important;
+    color: light-dark(var(--light-mode-link), var(--dark-mode-link)) !important;
     text-decoration: none !important;
 }
 flink-d:hover {
     cursor: pointer !important;
 }
 a {
-    color: light-dark(#3b2890, #573dc5);
+    color: light-dark(var(--light-mode-link), var(--dark-mode-link));
     text-decoration: none;
+}
+
+@media (max-device-width: 1000px) {
 }

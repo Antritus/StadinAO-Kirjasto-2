@@ -1,3 +1,4 @@
+// noinspection t
 $(document).ready(function() {
     $('.required').each(function() {
         $(this).html($(this).html() + '<span class="required-field">*</span>');
@@ -35,11 +36,30 @@ $(document).ready(function() {
         $(".signup-hide").hide();
     });
 
+    $(".signup-form .signup").on("click", function() {
+        let password = $("#signup-password").val().trim();
+        let passwordRpt = $("#signup-passwordRpt").val().trim();
+
+        if (!password ||!passwordRpt){
+            $("#signup-passwords-do-not-match").hide();
+            $("#signup-email-already-exists").hide();
+            $("#signup-account-already-exists").hide();
+            $("#signup-passwords-do-not-match").hide();
+            return false;
+        }
+
+        if (password===passwordRpt) {
+            $("#signup-passwords-do-not-match").hide();
+        } else {
+            $("#signup-passwords-do-not-match").show();
+            return false;
+        }
+        return true;
+    });
+
     $("#credentials-close").on("click", function (){
         hideLoginPrompt();
     })
-
-
     function checkStrength(password) {
         let strength = 0;
 
@@ -77,48 +97,62 @@ $(document).ready(function() {
         if (passwordStrengthness === 0) {
             $(".password-strength-container").hide();
             return;
-        } else if (passwordStrengthness >= 95) {
-            $("#password-strength-1").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-2").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-3").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-4").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-5").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-6").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
+        }
+        let strength1 = $("#password-strength-1");
+        let strength2 = $("#password-strength-2");
+        let strength3 = $("#password-strength-3");
+        let strength4 = $("#password-strength-4");
+        let strength5 = $("#password-strength-5");
+        let strength6 = $("#password-strength-6");
+        strength1.removeClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
+        strength2.removeClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
+        strength3.removeClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
+        strength4.removeClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
+        strength5.removeClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
+        strength6.removeClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
+
+        if (passwordStrengthness >= 95) {
+            strength1.addClass("success-background");
+            strength2.addClass("success-background");
+            strength3.addClass("success-background");
+            strength4.addClass("success-background");
+            strength5.addClass("success-background");
+            strength6.addClass("success-background");
         } else if (passwordStrengthness >= 85){
-            $("#password-strength-1").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-2").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-3").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-4").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-5").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-6").addClass("warning-background").removeClass("success-background").removeClass("error-background").removeClass("danger-background");
+            strength1.addClass("success-background");
+            strength2.addClass("success-background");
+            strength3.addClass("success-background");
+            strength4.addClass("success-background");
+            strength5.addClass("success-background");
+            strength6.addClass("warning-background");
         } else if (passwordStrengthness >= 75) {
-            $("#password-strength-1").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-2").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-3").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-4").addClass("warning-background").removeClass("success-background").removeClass("error-background").removeClass("danger-background");
-            $("#password-strength-5").addClass("warning-background").removeClass("success-background").removeClass("error-background").removeClass("danger-background");
-            $("#password-strength-6").addClass("warning-background").removeClass("success-background").removeClass("error-background").removeClass("danger-background");
+            strength1.addClass("success-background");
+            strength2.addClass("success-background");
+            strength3.addClass("success-background");
+            strength4.addClass("warning-background");
+            strength5.addClass("warning-background");
+            strength6.addClass("warning-background");
         } else if (passwordStrengthness >= 50) {
-            $("#password-strength-1").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-2").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-3").addClass("error-background").removeClass("success-background").removeClass("warning-background").removeClass("danger-background");
-            $("#password-strength-4").addClass("warning-background").removeClass("success-background").removeClass("error-background").removeClass("danger-background");
-            $("#password-strength-5").addClass("warning-background").removeClass("success-background").removeClass("error-background").removeClass("danger-background");
-            $("#password-strength-6").addClass("warning-background").removeClass("success-background").removeClass("error-background").removeClass("danger-background");
+            strength1.addClass("success-background");
+            strength2.addClass("success-background");
+            strength3.addClass("error-background");
+            strength4.addClass("warning-background");
+            strength5.addClass("warning-background");
+            strength6.addClass("warning-background");
         } else if (passwordStrengthness >= 25) {
-            $("#password-strength-1").addClass("success-background").removeClass("danger-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-2").addClass("error-background").removeClass("danger-background").removeClass("success-background").removeClass("warning-background");
-            $("#password-strength-3").addClass("error-background").removeClass("success-background").removeClass("warning-background").removeClass("danger-background");
-            $("#password-strength-4").addClass("warning-background").removeClass("success-background").removeClass("error-background").removeClass("danger-background");
-            $("#password-strength-5").addClass("warning-background").removeClass("success-background").removeClass("error-background").removeClass("danger-background");
-            $("#password-strength-6").addClass("warning-background").removeClass("success-background").removeClass("error-background").removeClass("danger-background");
+            strength1.addClass("success-background");
+            strength2.addClass("error-background");
+            strength3.addClass("error-background");
+            strength4.addClass("warning-background");
+            strength5.addClass("warning-background");
+            strength6.addClass("warning-background");
         } else {
-            $("#password-strength-1").addClass("danger-background").removeClass("success-background").removeClass("error-background").removeClass("warning-background");
-            $("#password-strength-2").addClass("error-background").removeClass("danger-background").removeClass("success").removeClass("warning-background");
-            $("#password-strength-3").addClass("error-background").removeClass("success-background").removeClass("warning-background").removeClass("danger-background");
-            $("#password-strength-4").addClass("warning-background").removeClass("success-background").removeClass("error-background").removeClass("danger-background");
-            $("#password-strength-5").addClass("warning-background").removeClass("success-background").removeClass("error-background").removeClass("danger-background");
-            $("#password-strength-6").addClass("warning-background").removeClass("success-background").removeClass("error-background").removeClass("danger-background");
+           strength1.addClass("danger-background");
+           strength2.addClass("error-background");
+           strength3.addClass("error-background");
+           strength4.addClass("warning-background");
+           strength5.addClass("warning-background");
+           strength6.addClass("warning-background");
         }
         $(".password-strength-container").show();
     }

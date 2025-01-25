@@ -2,7 +2,7 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    require_once("config.php");
+    require_once("../../../includes/config.php");
 
     if (isset($_POST['mode'])) {
         $darkMode = filter_var($_POST['mode'], FILTER_VALIDATE_BOOLEAN);

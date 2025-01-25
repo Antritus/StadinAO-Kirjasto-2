@@ -1,0 +1,107 @@
+:root {
+    --light-mode-search: #9a9a9a;
+    --dark-mode-search: #414141;
+}
+
+.search-bar {
+    max-width: 1800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    text-align: left;
+}
+
+.search-bar {
+    width: 100%;
+    background-color: light-dark(var(--light-mode-search), var(--dark-mode-search));
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.search-button-container {
+    width: 100%;
+    display: flex;
+    background-color: light-dark(var(--light-mode-search), var(--dark-mode-search));
+    border-radius: 0 0 20px 20px;
+    justify-content: center;
+    align-content: stretch;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.24);
+}
+
+#search-show, #search-hide {
+    font-size: 20px;
+    padding: 10px;
+    color: light-dark(black, white);
+    font-weight: bold;
+}
+
+.search-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    text-align: center;
+}
+.search-tags {
+    padding: 10px;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+}
+
+.tags-selector {
+    height: 100%;
+    margin: 8px;
+}
+
+.absolute-tags {
+    position: absolute;
+    background: darkgray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.24);
+}
+.selectable-switch {
+    background: gray;
+    min-width: 250px;
+    padding: 7px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.24);
+}
+
+.searching-tags {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.displayed-tags {
+    max-height: 200px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.true-search {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2px;
+}
+.product-search, .product-search-submit {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+}
+input[type="text"].product-search {
+    padding-left: 30px;
+}
+input[type="text"].product-search::placeholder {
+    padding-left: 30px;
+}
+.product-search-submit {
+    margin-left: 2px;
+    width: 30%;
+    background-color: #005890;
+}

@@ -1,32 +1,31 @@
-function useProperLogo(theme){
+function useProperLogo(theme) {
     $("logo").each(function () {
         let img = $(this).children("img");
-        if (theme) {
+        if (theme===true) {
             img.attr("src", "../assets/logo-white.png");
         } else {
             img.attr("src", "../assets/logo-black.png");
         }
     })
 }
-function useProperAccount(theme){
+
+function useProperAccount(theme) {
     $("account-logo").each(function () {
         let userProfilePicture = $(this).attr("profile-picture");
-        console.log(userProfilePicture + " hi");
         if (userProfilePicture !== undefined) {
             return;
         }
-        console.log("Derp");
-
         let img = $(this).children("img");
-        if (theme) {
+        if (theme===true) {
             img.attr("src", "../assets/user-white.png");
         } else {
             img.attr("src", "../assets/user-black.png");
         }
     })
 }
+
 function switchTheme(darkMode) {
-    if (darkMode) {
+    if (darkMode===true) {
         $(".dark-mode-switch").hide();
         $(".light-mode-switch").show();
         $("body").addClass("dark-mode").removeClass("light-mode");
@@ -38,6 +37,12 @@ function switchTheme(darkMode) {
     useProperLogo(darkMode);
     useProperAccount(darkMode);
 
+    // Save the theme preference to a cookie
+    Cookies.set("kirjis-darkMode", darkMode, {expires: 10, sameSite: 'strict'});
+
+    /* Ignore this code for now as implementing cookie based theme
+        Later "download" the theme from the server under the users account
+        possibly. Also possible to ignore this code completely and use the browsers theme
     let httpRequest = new XMLHttpRequest();
     httpRequest.open("POST", "../includes/theme.incl.php", true);
     httpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -48,10 +53,16 @@ function switchTheme(darkMode) {
         }
     };
     httpRequest.send("mode=" + encodeURIComponent(darkMode));
+     */
 }
+
+// Handle the dark theme from the start of the page
 $(document).ready(function () {
-    let darkMode = $("body").hasClass("dark-mode");
-    if (darkMode) {
+    let darkMode = Cookies.get("kirjis-darkMode");
+    if (darkMode === undefined || darkMode === null) {
+        darkMode = true;
+    }
+    if (darkMode === true || darkMode === "true") {
         switchTheme(true);
     } else {
         switchTheme(false);

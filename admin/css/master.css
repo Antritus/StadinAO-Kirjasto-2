@@ -1,0 +1,8 @@
+window-max-width.main {
+    max-width: 1800px;
+    display: flex;
+}
+
+.left-menu {
+    margin-right: 15px;
+}

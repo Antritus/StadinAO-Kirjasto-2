@@ -1,0 +1,24 @@
+:root {
+}
+.left-menu {
+    background-color: light-dark(var(--light-mode-navigation-color), var(--dark-mode-navigation-color));
+    border-radius: 0 0 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-menu a {
+    padding: 15px;
+    color: light-dark(black, white);
+}
+.left-menu a:hover {
+    background-color: light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
+}
+.left-menu a:last-child {
+    border-radius: 0 0 10px 0;
+    color: #e00000;
+    font-weight: bold;
+}
+.left-menu a:hover:last-child {
+    border-radius: 0 0 10px 0;
+}

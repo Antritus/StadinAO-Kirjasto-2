@@ -1,6 +1,6 @@
 <?php
-require_once "includes/config.php";
-require_once "includes/functions.theme.php";
+require_once "../includes/config.php";
+require_once "../includes/functions.theme.php";
 
 ?>
     <!DOCTYPE html>
@@ -14,7 +14,7 @@ require_once "includes/functions.theme.php";
         <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
 
         <?php
-        require_once "includes/functions.header.php";
+        require_once "../includes/functions.header.php";
             applyHeaderContent();
         ?>
 
@@ -35,20 +35,20 @@ require_once "includes/functions.theme.php";
 
 
         <!-- Internals -->
-        <script src='javascript/theme.js'></script>
-        <script src="javascript/tooltip.js"></script>
-        <link rel='stylesheet' href='css/gradient.css'>
-        <script src='javascript/gradient.js'></script>
-        <script src='javascript/main.js'></script>
-        <link rel='stylesheet' href='css/main.css'>
+        <script src='../javascript/theme.js'></script>
+        <script src="../javascript/tooltip.js"></script>
+        <link rel='stylesheet' href='../css/gradient.css'>
+        <script src='../javascript/gradient.js'></script>
+        <script src='../javascript/main.js'></script>
+        <link rel='stylesheet' href='../css/main.css'>
 
         <!-- Top Navigation Bar -->
-        <script src="javascript/menu-top.js"></script>
-        <link rel='stylesheet' href='css/menu-top.css'>
+        <script src="../javascript/menu-top.js"></script>
+        <link rel='stylesheet' href='../css/menu-top.css'>
 
         <!-- Login/Signup -->
-        <script src='javascript/account-credentials.js'></script>
-        <link rel='stylesheet' href='css/account-credentials.css'>
+        <script src='../javascript/account-credentials.js'></script>
+        <link rel='stylesheet' href='../css/account-credentials.css'>
 
 
     </head>
@@ -67,10 +67,5 @@ require_once "includes/functions.theme.php";
 >
 
 <?php
-// body Header
-include_once "header.php";// Login/Singup
-// TODO ENABLE
-//include_once "account-login.overlay.php";
 
-// Header bar (menu)
 include_once "menu-top.php";
