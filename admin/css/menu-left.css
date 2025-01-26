@@ -1,24 +1,35 @@
 :root {
 }
+
 .left-menu {
-    background-color: light-dark(var(--light-mode-navigation-color), var(--dark-mode-navigation-color));
     border-radius: 0 0 10px 0;
     display: flex;
     flex-direction: column;
 }
 
 .left-menu a {
+    background-color: light-dark(var(--light-mode-navigation-color), var(--dark-mode-navigation-color));
     padding: 15px;
     color: light-dark(black, white);
 }
+
+.active-page {
+    background-color: rgba(light-dark(var(--light-mode-navigation-color), var(--dark-mode-navigation-color)), light-dark(1.5, 0.5));
+}
+
 .left-menu a:hover {
     background-color: light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
+    border-right: 2px solid light-dark(var(--light-mode-standard-focus-color), var(--dark-mode-standard-focus-color));
 }
+
 .left-menu a:last-child {
     border-radius: 0 0 10px 0;
     color: #e00000;
     font-weight: bold;
 }
+
 .left-menu a:hover:last-child {
     border-radius: 0 0 10px 0;
+    border-right: 2px solid light-dark(var(--light-mode-standard-focus-color), var(--dark-mode-standard-focus-color));
+    border-bottom: 2px solid light-dark(var(--light-mode-standard-focus-color), var(--dark-mode-standard-focus-color));
 }

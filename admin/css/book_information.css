@@ -1,0 +1,38 @@
+.main-content {
+    margin: 20px;
+    max-width: 600px;
+}
+.editor {
+    background: red;
+    border-radius: 10px;
+    padding: 25px;
+    font-weight: 400;
+}
+
+.title {
+    margin: 5px;
+    font-size: 27px;
+}
+
+.value {
+    width: 100%;
+    min-width: 100%;
+    padding: 10px;
+    font-size: 22px;
+}
+
+input.value {
+    border: none;
+    border-radius: 7px;
+}
+
+textarea.value {
+    outline: none;
+    border: none;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    width: 100%;
+    min-height: 200px;
+    resize: none;
+}
